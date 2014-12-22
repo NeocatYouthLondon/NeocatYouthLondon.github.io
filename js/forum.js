@@ -32,15 +32,15 @@ var mainModule = angular.module('app', []).
 								id: 0,
 								userID: 0,
 								threadID: 0,
-								projectID: 0
+								projectID: 0,
 								date: "2014",
 								message: "hi"
 							},
 							{
 								id: 1,
 								userID: 2,
-								threadID: 0								threadID: 0,
-								projectID: 0
+								threadID: 0,								threadID: 0,
+								projectID: 0,
 								date: "2014",
 								message: "hi"
 							}
