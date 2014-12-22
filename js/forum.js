@@ -4,6 +4,8 @@ var mainModule = angular.module('app', []).
 		$scope.currentThread = null;
 		$scope.show = "login";
 		$scope.newProjectName = "";
+		$scope.newThreadSubject = "";
+		$scope.newThreadMessage = "";
 		
 		$scope.openThreads = function(project){
 			$scope.show = "threads"; 
@@ -19,6 +21,17 @@ var mainModule = angular.module('app', []).
 			$scope.projects.push({id: $scope.projects.length, name: $scope.newProjectName, threads: []});
 			$scope.newProjectName = "";
 			$scope.show="projects";
+		}
+		
+		$scope.createThread = function(){
+			$scope.currentProject.threads.push({
+				id: $scope.currentProject.threads.length,
+				subject: $scope.newThreadSubject,
+				posts: [{id: 0, message: $scope.newThreadMessage}]
+			})
+			$scope.newThreadSubject = "";
+			$scope.newThreadMessage = "";
+			$scope.show="threads";
 		}
 		
 		$scope.users = [
