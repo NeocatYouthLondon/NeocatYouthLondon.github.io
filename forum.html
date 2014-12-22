@@ -81,7 +81,7 @@
 	        </div>
         </div>
         <div class="threads-list ng-hide" ng-show="show == 'threads'">
-        	<div ng-repeat="thread in currentProject.threads" class="forum-click">
+        	<div ng-repeat="thread in currentProject.threads" class="forum-click" ng-click="openPosts(thread)">
     			{{thread.subject}}
 	    	</div>
 	    	<div class="forum-click">
