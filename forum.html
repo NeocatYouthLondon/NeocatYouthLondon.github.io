@@ -108,7 +108,7 @@
     			{{currentProject.name}}  >--->  {{currentThread.subject}}
     		</div>
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
-    			{{getItemFromID(users, post.userID).firstName + ": " + post.message}}
+    			<span class="user-name">{{getItemFromID(users, post.userID).firstName + ": "}}</span><span>{{post.message}}</span>
 	    	</div>
 	    	<div class="forum-click">
 	    		Write new post
