@@ -30,3 +30,10 @@
 .forum .form-field label{
 	margin-right: 10px;
 }
+
+.forum .form-field input{
+	width: 50%;
+	min-height: 35px;
+	padding: 0 10px;
+	border-radius: 10px;
+}
