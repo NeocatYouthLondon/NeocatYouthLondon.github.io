@@ -41,6 +41,8 @@ var mainModule = angular.module('app', []).
 				userID: 2,
 				message: $scope.newPost
 			});
+			
+			$scope.newPost= "";
 		}
 		
 		$scope.users = [
