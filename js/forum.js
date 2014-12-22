@@ -1,5 +1,8 @@
 var mainModule = angular.module('app', []).
 	controller("forumCtrl", function forumCtrl($scope, $window, $timeout, $http){
+		$scope.currentProject = null;
+		$scope.showThreads = false;
+		
 		$scope.users = [
 			{
 				id: 0,
