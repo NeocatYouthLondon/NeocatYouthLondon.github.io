@@ -32,6 +32,26 @@ var mainModule = angular.module('app', []).
 			}
 		];
 		
+		$scope.getItemFromID = function(array, id)
+		{
+			for(var i = 0; i < array; i++){
+				if(array[i].id == id){
+					return array[i];
+				}
+			}
+			return false;
+		}
+		
+		$scope.getIndexFromID = function(array, id)
+		{
+			for(var i = 0; i < array; i++){
+				if(array[i].id == id){
+					return i;
+				}
+			}
+			return false;
+		}
+		
 		$scope.projects = [
 			{
 				id: 0, 
