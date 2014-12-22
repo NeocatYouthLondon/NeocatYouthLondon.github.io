@@ -93,7 +93,7 @@
         </div>
         <div class="posts-list ng-hide" ng-show="show == 'posts'">
         	<div ng-repeat="post in currentThread.posts" class="forum-click">
-    			{{post.message}}
+    			{{getItemFromID(users, post.userID).firstName + ": " + post.message}}
 	    	</div>
 	    	<div class="forum-click">
 	    		Write new post
