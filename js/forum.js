@@ -2,7 +2,7 @@ var mainModule = angular.module('app', []).
 	controller("forumCtrl", function forumCtrl($scope, $window, $timeout, $http){
 		$scope.currentProject = null;
 		$scope.currentThread = null;
-		$scope.show = "projects";
+		$scope.show = "login";
 		
 		$scope.openThreads = function(project){
 			$scope.show = "threads"; 
