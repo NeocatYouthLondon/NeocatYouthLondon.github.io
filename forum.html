@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en" ng-app="app">
 
 <head>
@@ -73,7 +72,7 @@
 
     <!-- Forum Section -->
     <section id="forum" class="container content-section text-center">
-        <div class="forum-click" ng-repeat="project in projects" ng-click="currentProject = project; showThreads = true; console.log(project)">
+        <div class="forum-click" ng-repeat="project in projects" ng-click="console.log(project)">
         	{{project.name}}
         </div>
         <div class="forum-click">
