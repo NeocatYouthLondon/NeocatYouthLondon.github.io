@@ -6,3 +6,12 @@
 .forum li{
 	list-style: none;
 }
+
+.forum .forum-click{
+	background: white;
+	color: black;
+}
+
+.forum .forum-click:hover{
+	background:red;
+}
