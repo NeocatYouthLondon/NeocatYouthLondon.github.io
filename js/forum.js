@@ -6,6 +6,7 @@ var mainModule = angular.module('app', []).
 		$scope.newProjectName = "";
 		$scope.newThreadSubject = "";
 		$scope.newThreadMessage = "";
+		$scope.newPost = "";
 		
 		$scope.openThreads = function(project){
 			$scope.show = "threads"; 
@@ -27,11 +28,19 @@ var mainModule = angular.module('app', []).
 			$scope.currentProject.threads.push({
 				id: $scope.currentProject.threads.length,
 				subject: $scope.newThreadSubject,
-				posts: [{id: 0, message: $scope.newThreadMessage}]
+				posts: [{id: 0, userID: 0, message: $scope.newThreadMessage}]
 			})
 			$scope.newThreadSubject = "";
 			$scope.newThreadMessage = "";
 			$scope.show="threads";
+		}
+		
+		$scope.sendPost = function(){
+			$scope.currentThread.posts.push({
+				id: $scope.currentThread.posts.length,
+				userID: 2,
+				message: $scope.newPost
+			});
 		}
 		
 		$scope.users = [
