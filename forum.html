@@ -109,7 +109,7 @@
         	<div ng-repeat="thread in currentProject.threads" class="forum-click" ng-click="openPosts(thread)">
     			{{thread.subject}}
 	    	</div>
-	    	<div class="forum-click">
+	    	<div class="forum-click" ng-click="show='create-thread'">
 	    		Create new thread
 	    	</div>
 	    	<div ng-click="show = 'projects'" class="forum-click">
