@@ -24,7 +24,6 @@
 	color: black;
 	border-bottom: 1px black solid;
 	text-align: left;
-	min-width: 150px;
 }
 
 .forum .thread-post span{
@@ -34,6 +33,7 @@
 .forum .thread-post span.user-name{
 	background: rgb(177, 218, 182);
 	display: inline-block;
+	min-width: 150px;
 }
 
 .forum .title-block{
