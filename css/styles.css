@@ -18,3 +18,7 @@
 .forum .forum-click:hover{
 	background: rgb(255, 255, 202);
 }
+
+.forum input{
+	color: black;
+}
