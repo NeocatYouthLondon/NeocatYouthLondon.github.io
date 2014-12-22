@@ -3,6 +3,12 @@ var mainModule = angular.module('app', []).
 		$scope.currentProject = null;
 		$scope.showThreads = false;
 		
+		$scope.openThreads = function(project){
+			$scope.showThreads = !$scope.showThreads; 
+			$scope.currentProject = project; 
+			console.log(project)
+		}
+		
 		$scope.users = [
 			{
 				id: 0,
