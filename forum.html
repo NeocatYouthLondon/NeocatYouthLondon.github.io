@@ -74,6 +74,9 @@
     	<div class="login" ng-show="show=='login'">
     		<label for="user-name">Username:</label><input id="user-name">
     		<label for="user-password">Password:</label><input type="password" id="user-password">
+    		<div ng-click="show = 'projects'" class="forum-click">
+	    		Log in
+	    	</div>
     	</div>
     	<div class="projects-list" ng-show="show == 'projects'">
 	        <div class="forum-click" ng-repeat="project in projects" ng-click="openThreads(project)">
