@@ -34,7 +34,7 @@ var mainModule = angular.module('app', []).
 		
 		$scope.getItemFromID = function(array, id)
 		{
-			for(var i = 0; i < array; i++){
+			for(var i = 0; i < array.length; i++){
 				if(array[i].id == id){
 					return array[i];
 				}
@@ -44,7 +44,7 @@ var mainModule = angular.module('app', []).
 		
 		$scope.getIndexFromID = function(array, id)
 		{
-			for(var i = 0; i < array; i++){
+			for(var i = 0; i < array.length; i++){
 				if(array[i].id == id){
 					return i;
 				}
