@@ -78,6 +78,12 @@
 	    		Log in
 	    	</div>
     	</div>
+    	<div class="create-project" ng-show="show=='create-project'">
+    		<div class="form-field" style="margin-bottom: 15px"><label for="project-name">Project name:</label><input ng-model="newProjectName" type="text" id="project-name"></div>
+    		<div ng-click="createProject()" class="forum-click">
+	    		Create
+	    	</div>
+    	</div>
     	<div class="projects-list" ng-show="show == 'projects'">
     		<div class="title-block">
     			Projects
