@@ -71,28 +71,9 @@
     </nav>
 
 
-    <!-- Intro Header -->
-    <!--
-    <header class="intro">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-8 col-md-offset-2" style="text-shadow: 0 0 11px black;">
-                        <h1 class="brand-heading">Neocat Youth Choir London</h1>
-                        <p class="intro-text">Conducted by Michael Spence.</p>
-                        <a href="#preview" class="btn btn-circle page-scroll">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-    -->
-
-    <!-- About Section -->
+    <!-- Forum Section -->
     <section id="forum" class="container content-section text-center">
-        <div class="forum-click" ng-repeat="project in projects" ng-click="currentProject = project; showThreads = true;">
+        <div class="forum-click" ng-repeat="project in projects" ng-click="currentProject = project; showThreads = true; console.log(project)">
         	{{project.name}}
         </div>
         <div class="forum-click">
