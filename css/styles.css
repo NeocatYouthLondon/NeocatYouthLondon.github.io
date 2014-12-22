@@ -46,7 +46,7 @@
 	border-bottom: 3px black solid;
 }
 
-.forum input{
+.forum input, .forum textarea{
 	color: black;
 }
 
