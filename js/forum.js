@@ -21,6 +21,7 @@ var mainModule = angular.module('app', []).
 		$scope.projects = [
 			{
 				id: 0, 
+				name: "Prince of Egypt",
 				threads: [
 					{
 						id: 0, 
