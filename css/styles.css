@@ -22,3 +22,11 @@
 .forum input{
 	color: black;
 }
+
+.forum .form-field{
+	padding: 10px;
+}
+
+.forum .form-field label{
+	margin-right: 10px;
+}
