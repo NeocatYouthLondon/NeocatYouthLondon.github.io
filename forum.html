@@ -71,16 +71,16 @@
 
 
     <!-- Forum Section -->
-    <div id="forum" class="container content-section text-center">
-        <div class="forum-click" ng-repeat="project in projects" ng-click="showThreads = !showThreads; currentProject = project; console.log(project)">
+    <section id="forum" class="container content-section text-center">
+        <div class="forum-click" ng-repeat="project in projects" ng-click="openThreads(project)">
         	{{project.name}}
         </div>
         <div class="forum-click">
         	Create new project
         </div>
-    </div>
+    </section>
     
-    <div class="container content-section text-center" ng-show="showThreads">
+    <section class="container content-section text-center" ng-show="showThreads">
     	<div ng-repeat="thread in currentProject.threads" class="forum-click">
     		{{thread.subject}}
     	</div>
@@ -90,7 +90,7 @@
     	<div ng-click="showThreads = !showThreads;" class="forum-click">
     		Close
     	</div>
-    </div>
+    </section>
     
     
 
