@@ -79,6 +79,9 @@
 	    	</div>
     	</div>
     	<div class="projects-list" ng-show="show == 'projects'">
+    		<div class="title-block">
+    			Projects
+    		</div>
 	        <div class="forum-click" ng-repeat="project in projects" ng-click="openThreads(project)">
 	        	{{project.name}}
 	        </div>
@@ -87,6 +90,9 @@
 	        </div>
         </div>
         <div class="threads-list ng-hide" ng-show="show == 'threads'">
+            	<div class="title-block">
+    			{{currentProject.name}}
+    		</div>
         	<div ng-repeat="thread in currentProject.threads" class="forum-click" ng-click="openPosts(thread)">
     			{{thread.subject}}
 	    	</div>
@@ -98,6 +104,9 @@
 	    	</div>
         </div>
         <div class="posts-list ng-hide" ng-show="show == 'posts'">
+                <div class="title-block">
+    			{{currentProject.name}} >>> {{currentThread.subject}}
+    		</div>
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
     			{{getItemFromID(users, post.userID).firstName + ": " + post.message}}
 	    	</div>
