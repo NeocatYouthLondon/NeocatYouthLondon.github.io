@@ -1,12 +1,11 @@
 var mainModule = angular.module('app', []).
 	controller("forumCtrl", function forumCtrl($scope, $window, $timeout, $http){
 		$scope.currentProject = null;
-		$scope.showThreads = false;
+		$scope.show = "projects";
 		
 		$scope.openThreads = function(project){
-			$scope.showThreads = !$scope.showThreads; 
+			$scope.show = "threads"; 
 			$scope.currentProject = project; 
-			console.log(project)
 		}
 		
 		$scope.users = [
