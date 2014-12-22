@@ -22,8 +22,15 @@
 .forum .thread-post{
 	background: white;
 	color: black;
-	padding: 15px;
 	border-bottom: 1px black solid;
+}
+
+.forum .thread-post span{
+	padding: 15px;
+}
+
+.forum .thread-post span.user-name{
+	background: green;
 }
 
 .forum .title-block{
