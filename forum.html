@@ -129,7 +129,8 @@
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
     			<span class="user-name">{{getItemFromID(users, post.userID).firstName + ": "}}</span><span>{{post.message}}</span>
 	    	</div>
-	    	<div class="forum-click">
+	    	<textarea ng-model="newPost" style="min-width: 100%; width: 100%"></textarea>
+	    	<div class="forum-click" ng-click="sendPost()">
 	    		Write new post
 	    	</div>
 	    	<div ng-click="show = 'threads'" class="forum-click">
