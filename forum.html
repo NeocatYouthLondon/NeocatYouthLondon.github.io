@@ -105,7 +105,7 @@
         </div>
         <div class="posts-list ng-hide" ng-show="show == 'posts'">
                 <div class="title-block">
-    			{{currentProject.name}} >>> {{currentThread.subject}}
+    			{{currentProject.name}}  >  {{currentThread.subject}}
     		</div>
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
     			{{getItemFromID(users, post.userID).firstName + ": " + post.message}}
