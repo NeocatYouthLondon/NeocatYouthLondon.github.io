@@ -24,6 +24,7 @@
 	color: black;
 	border-bottom: 1px black solid;
 	text-align: left;
+	min-width: 150px;
 }
 
 .forum .thread-post span{
