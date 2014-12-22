@@ -12,7 +12,7 @@ var mainModule = angular.module('app', []).
 				surname: "Dennis"
 			},
 			{
-				id: 2
+				id: 2,
 				firstName: "Dave",
 				surname: "Da rave"
 			}
