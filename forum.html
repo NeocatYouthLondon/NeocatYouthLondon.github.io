@@ -83,12 +83,18 @@
     		<div ng-click="createProject()" class="forum-click">
 	    		Create
 	    	</div>
+	    	<div ng-click="show = 'projects'" class="forum-click">
+	    		Close
+	    	</div>
     	</div>
     	<div class="create-thread" ng-show="show=='create-thread'">
-    	    	<div class="form-field"><label for="thread-subject">Suibject:</label><input type="text" ng-model="newThreadSubject" id="thread-subject"></div>
+    	    	<div class="form-field"><label for="thread-subject">Subject:</label><input type="text" ng-model="newThreadSubject" id="thread-subject"></div>
     		<div class="form-field" style="margin-bottom: 15px"><label for="thread-message">Message:</label><input ng-model="newThreadMessage" type="text" id="thread-message"></div>
     		<div ng-click="createThread()" class="forum-click">
 	    		Create
+	    	</div>
+	    	<div ng-click="show = 'threads'" class="forum-click">
+	    		Close
 	    	</div>
     	</div>
     	<div class="projects-list" ng-show="show == 'projects'">
