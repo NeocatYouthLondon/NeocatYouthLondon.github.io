@@ -10,6 +10,7 @@
 .forum .forum-click{
 	background: white;
 	color: black;
+	cursor: pointer;
 }
 
 .forum .forum-click:hover{
