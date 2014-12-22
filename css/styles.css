@@ -11,6 +11,8 @@
 	background: white;
 	color: black;
 	cursor: pointer;
+	padding: 15px;
+	border-bottom: 1px black solid;
 }
 
 .forum .forum-click:hover{
