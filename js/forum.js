@@ -104,6 +104,58 @@ var mainModule = angular.module('app', []).
 						]
 					}
 				]
+			},
+			{
+				id: 1, 
+				name: "The Lion King",
+				threads: [
+					{
+						id: 0, 
+						projectID: 0, 
+						subject: "when to do this",
+						posts: [
+							{
+								id: 0,
+								userID: 0,
+								threadID: 0,
+								projectID: 0,
+								date: "2014",
+								message: "hi"
+							},
+							{
+								id: 1,
+								userID: 2,
+								threadID: 0,								threadID: 0,
+								projectID: 0,
+								date: "2014",
+								message: "hi"
+							}
+						]
+					},
+					{
+						id: 1, 
+						projectID: 0, 
+						subject: "stuff and things",
+						posts: [
+							{
+								id: 2,
+								userID: 1,
+								threadID: 1,
+								projectID: 0,
+								date: "2014",
+								message: "yo"
+							},
+							{
+								id: 3,
+								userID: 2,
+								threadID: 1,
+								projectID: 0,
+								date: "2014",
+								message: "kazaa"
+							}
+						]
+					}
+				]
 			}
 		];
 	
