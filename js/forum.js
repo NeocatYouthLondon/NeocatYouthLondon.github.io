@@ -208,13 +208,18 @@ var mainModule = angular.module('app', []).
 		$scope.currentUser = null;
 		$scope.loggedIn = false;
 		$scope.loginFailed = false;
+		
+		$scope.loginName = "";
+		$scope.loginPass = "";
 	
 		$scope.login = function(){
-			var stringifiedPost = JSON.stringify(postObject);
-			$http({method: "POST", url: serverURL + "/posts", data: stringifiedPost}).success(function(data, status){
+			if($scopeloginName == "" || $scopeloginPass==""){ $scope.loginFailed = true; return; }
+			
+			var stringifiedPost = JSON.stringify({userName: $scope.loginName, password: $scope.loginPass});
+			$http({method: "GET", url: serverURL + "/posts", data: stringifiedPost}).success(function(data, status){
 				if(data){
 					//todo: change this later to be assigned on login.
-					$scope.currentUser = $scope.users[0];
+					$scope.currentUser = $scope.getItemFromID($scope.users, data.id);
 					$scope.loginFailed = false;
 					$scope.loggedIn = true;
 					$scope.show = 'projects';
