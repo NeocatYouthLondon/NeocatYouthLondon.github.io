@@ -53,7 +53,8 @@ var mainModule = angular.module('app', []).
 				imageURL: "http://www.gravatar.com/avatar/f8231ccab5f14c6499e32e17700399d9?d=wavatar",
 				websiteURL: "http://www.michalpaszkiewicz.co.uk",
 				experience: "8 years live guitar playing",
-				skills: "Software"
+				skills: "Software",
+				openToPublic: false
 			},
 			{
 				id: 1,
@@ -62,7 +63,8 @@ var mainModule = angular.module('app', []).
 				imageURL: "https://avatars3.githubusercontent.com/u/9275082?v=3&amp",
 				websiteURL: "https://aaronjden.github.io",
 				experience: "Lots of good experience",
-				skills: "Software"
+				skills: "Software",
+				openToPublic: true 
 			},
 			{
 				id: 2,
@@ -71,7 +73,8 @@ var mainModule = angular.module('app', []).
 				imageURL: "https://avatars2.githubusercontent.com/u/8076321?v=3&amp",
 				websiteURL: "http://tametheboardgame.com/",
 				experience: "40 years in the circus industry",
-				skills: "Juggling"
+				skills: "Juggling",
+				openToPublic: true
 			}
 		];
 		
