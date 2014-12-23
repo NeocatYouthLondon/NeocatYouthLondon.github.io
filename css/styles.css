@@ -34,7 +34,10 @@ input::selection{
 }
 
 .forum .thread-post span{
-	padding: 15px;
+}
+
+.forum span.user-name img{
+	margin-right: 10px;
 }
 
 .forum .thread-post span.user-name{
