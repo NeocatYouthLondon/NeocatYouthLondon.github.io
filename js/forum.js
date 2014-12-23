@@ -208,7 +208,19 @@ var mainModule = angular.module('app', []).
 		
 		//todo: change this later to be assigned on login.
 		$scope.currentUser = $scope.users[0];
+		$scope.loggedIn = false;
+		$scope.loginFailed = false;
 	
+		$scope.login = function(){
+			if(true){
+				$scope.loginFailed = false;
+				$scope.loggedIn = true;
+				$scope.show = 'projects';
+			}
+			else{
+				$scope.loginFailed = true;
+			}
+		}
 	
 	}).directive('selectOnClick', function () {
     return {
