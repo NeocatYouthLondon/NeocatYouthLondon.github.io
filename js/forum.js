@@ -213,7 +213,7 @@ var mainModule = angular.module('app', []).
 		$scope.loginPass = "";
 	
 		$scope.login = function(){
-			if($scopeloginName == "" || $scopeloginPass==""){ $scope.loginFailed = true; return; }
+			if($scope.loginName == "" || $scopeloginPass==""){ $scope.loginFailed = true; return; }
 			
 			var stringifiedPost = JSON.stringify({userName: $scope.loginName, password: $scope.loginPass});
 			$http({method: "GET", url: serverURL + "/posts", data: stringifiedPost}).success(function(data, status){
