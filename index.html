@@ -151,8 +151,8 @@
 		    items.push( 
 		    	 '<div class="user-summary" style="display: inline-block;"><div><img src="' + val.imageURL + '" width=100 height=100><span>' + val.firstName + " " + val.surname + '</span></div><div><a href="' + val.websiteURL + '" target="_blank">Website</a></div>'
 	    		+ '<div>' + val.experience + '</div><div>' + val.skills + '</div></div>'
-		  }});
-	  
+		  );
+	  	}});
 	  $( "<div/>", {
 	    html: items.join( "" )
 	  }).appendTo( "#members" );
