@@ -57,13 +57,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" ng-click="show = 'projects'">Forum</a>
+                        <a class="page-scroll" ng-click="show = 'projects'" ng-show="loggedIn">Forum</a>
                     </li>
                     <li>
-                    	<a class="page-scroll" ng-click="show = 'users'">Users</a>
+                    	<a class="page-scroll" ng-click="show = 'users'" ng-show="loggedIn">Users</a>
                     </li>
                     <li>
-                        <a class="page-scroll" ng-click="show = 'profile'">My Profile</a>
+                        <a class="page-scroll" ng-click="show = 'profile'" ng-show="loggedIn">My Profile</a>
                     </li>
                 </ul>
             </div>
