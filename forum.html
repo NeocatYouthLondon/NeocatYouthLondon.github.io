@@ -87,8 +87,8 @@
     	    	<div class="form-field"><label for="user-website">Website URL:</label><input select-on-click type="text" ng-model="currentUser.websiteURL" id="user-website"></div>
     	    	<div class="form-field"><label for="user-experience">Experience:</label><input select-on-click type="text" ng-model="currentUser.experience" id="user-experience"></div>
     	    	<div class="form-field"><label for="user-skills">Skills:</label><input select-on-click type="text" ng-model="currentUser.skills" id="user-skills"></div>
-    	    	<div ng-click="show = 'projects'" class="forum-click">
-	    		Close
+    	    	<div ng-click="" class="forum-click">
+	    		Save
 	    	</div>
     	</div>
     	<div class="users" ng-show="show == 'users'">
@@ -98,9 +98,6 @@
     			<div>{{user.experience}}</div>
     			<div>{{user.skills}}</div>
     		</div>
-    		<div ng-click="show = 'projects'" class="forum-click">
-	    		Close
-	    	</div>
     	</div>
     	<div class="create-project" ng-show="show=='create-project'">
     		<div class="form-field" style="margin-bottom: 15px"><label for="project-name">Project name:</label><input select-on-click ng-model="newProjectName" type="text" id="project-name"></div>
