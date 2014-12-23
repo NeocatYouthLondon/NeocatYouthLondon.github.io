@@ -94,6 +94,21 @@
     	    	<div ng-click="" class="forum-click">
 	    		Save
 	    	</div>
+	    	<div ng-click="show='changePassword'">
+	    		Change password
+	    	</div>
+    	</div>
+    	<div class="profile" ng-show="show=='changePassword'">
+    		<div><img ng-src="{{currentUser.imageURL}}" width=200 height=200><h1>{{currentUser.firstName}} {{currentUser.surname}}</h1></div>
+    		<div class="form-field"><label for="user-password">Current password:</label><input select-on-click type="text" ng-model="user-password" id="user-password"></div>
+    		<div class="form-field"><label for="user-new-password">New password:</label><input select-on-click type="text" ng-model="user-new-password" id="user-new-password"></div>
+    		<div class="form-field"><label for="user-retype-password">Retype new password:</label><input select-on-click type="text" ng-model="user-retype-password" id="user-retype-password"></div>
+		<div ng-click="" class="forum-click">
+	    		Change password
+	    	</div>
+	    	<div ng-click="show='profile'">
+	    		Cancel
+	    	</div>
     	</div>
     	<div class="users" ng-show="show == 'users'">
     		<div class="user-summary" ng-repeat="user in users" ng-show="user.openToPublic">
