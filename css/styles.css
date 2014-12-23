@@ -73,6 +73,11 @@
 	border-radius: 10px;
 }
 
+.forum .profile{
+	background: rgb(42, 40, 40);
+	border-radius: 10px;
+}
+
 .forum .users .user-summary img, .forum .profile img{
 	border-radius: 10px;
 	margin: 5px;
