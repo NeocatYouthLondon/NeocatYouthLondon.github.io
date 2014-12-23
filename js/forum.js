@@ -81,7 +81,7 @@ var mainModule = angular.module('app', []).
 				}
 			}
 			return false;
-		}
+		};
 		
 		$scope.getIndexFromID = function(array, id)
 		{
@@ -91,11 +91,11 @@ var mainModule = angular.module('app', []).
 				}
 			}
 			return false;
-		}
+		};
 		
 		$scope.projects = [];
 		
-		$scope.getAllPosts = functions(){
+		$scope.getAllPosts = function(){
 			var additionalPosts = [];
 			$http({method: "GET", url: serverURL + "posts"})
 				.success(function(data, status){
