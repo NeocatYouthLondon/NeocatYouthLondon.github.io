@@ -132,9 +132,26 @@ var mainModule = angular.module('app', []).
 			});
 		}
 		
-		$scope.getAllData = function(){
-			var additionalProjects = [];
+		$scope.getAllUsers = function(){
+			var additionalUsers = [];
 			
+			$http({method: "GET", url: serverURL + "users"})
+			.success(function(data, status){
+				additionalUsers = data;
+				console.log("Additional projects: " + additionalUsers)
+				for(var i = 0; i < additionalUsers.length; i++){
+					$scope.users.push(additionalUsers[i]);
+				}
+			}).error(function(data, status){
+				console.log("Threads Fail");	
+			});
+		}
+		
+		$scope.getAllData = function(){
+			$scope.getAllUsers();
+			
+			var additionalProjects = [];
+		
 			$http({method: "GET", url: serverURL + "projects"})
 			.success(function(data, status){
 				additionalProjects = data;
