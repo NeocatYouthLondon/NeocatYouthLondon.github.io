@@ -2,6 +2,10 @@
 
 }
 
+input::selection{
+	background: rgb(188, 188, 255);;
+}
+
 #forum{
 	padding-top: 150px;
 }
