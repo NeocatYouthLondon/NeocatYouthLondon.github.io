@@ -75,18 +75,18 @@
     <!-- Forum Section -->
     <section id="forum" class="container content-section text-center">
         <div class="login" ng-show="show=='login'">
-    		<div class="form-field"><label for="user-name">Username:</label><input type="text" id="user-name"></div>
-    		<div class="form-field" style="margin-bottom: 15px"><label for="user-password">Password:</label><input type="password" id="user-password"></div>
+    		<div class="form-field"><label for="user-name">Username:</label><input type="text" id="user-name" select-on-click></div>
+    		<div class="form-field" style="margin-bottom: 15px"><label for="user-password">Password:</label><input select-on-click type="password" id="user-password"></div>
     		<div ng-click="show = 'projects'" class="forum-click">
 	    		Log in
 	    	</div>
     	</div>
     	<div class="profile" ng-show="show=='profile'">
 		<div><img ng-src="{{currentUser.imageURL}}" width=200 height=200><h1>{{currentUser.firstName}} {{currentUser.surname}}</h1></div>
-		<div class="form-field"><label for="user-image">Image URL:</label><input type="text" ng-model="currentUser.imageURL" id="user-image"></div>
-    	    	<div class="form-field"><label for="user-website">Website URL:</label><input type="text" ng-model="currentUser.websiteURL" id="user-website"></div>
-    	    	<div class="form-field"><label for="user-experience">Experience:</label><input type="text" ng-model="currentUser.experience" id="user-experience"></div>
-    	    	<div class="form-field"><label for="user-skills">Skills:</label><input type="text" ng-model="currentUser.skills" id="user-skills"></div>
+		<div class="form-field"><label for="user-image">Image URL:</label><input select-on-click type="text" ng-model="currentUser.imageURL" id="user-image"></div>
+    	    	<div class="form-field"><label for="user-website">Website URL:</label><input select-on-click type="text" ng-model="currentUser.websiteURL" id="user-website"></div>
+    	    	<div class="form-field"><label for="user-experience">Experience:</label><input select-on-click type="text" ng-model="currentUser.experience" id="user-experience"></div>
+    	    	<div class="form-field"><label for="user-skills">Skills:</label><input select-on-click type="text" ng-model="currentUser.skills" id="user-skills"></div>
     	    	<div ng-click="show = 'projects'" class="forum-click">
 	    		Close
 	    	</div>
@@ -103,7 +103,7 @@
 	    	</div>
     	</div>
     	<div class="create-project" ng-show="show=='create-project'">
-    		<div class="form-field" style="margin-bottom: 15px"><label for="project-name">Project name:</label><input ng-model="newProjectName" type="text" id="project-name"></div>
+    		<div class="form-field" style="margin-bottom: 15px"><label for="project-name">Project name:</label><input select-on-click ng-model="newProjectName" type="text" id="project-name"></div>
     		<div ng-click="createProject()" class="forum-click">
 	    		Create
 	    	</div>
@@ -112,8 +112,8 @@
 	    	</div>
     	</div>
     	<div class="create-thread" ng-show="show=='create-thread'">
-    	    	<div class="form-field"><label for="thread-subject">Subject:</label><input type="text" ng-model="newThreadSubject" id="thread-subject"></div>
-    		<div class="form-field" style="margin-bottom: 15px"><label for="thread-message">Message:</label><input ng-model="newThreadMessage" type="text" id="thread-message"></div>
+    	    	<div class="form-field"><label for="thread-subject">Subject:</label><input select-on-click type="text" ng-model="newThreadSubject" id="thread-subject"></div>
+    		<div class="form-field" style="margin-bottom: 15px"><label for="thread-message">Message:</label><input select-on-click ng-model="newThreadMessage" type="text" id="thread-message"></div>
     		<div ng-click="createThread()" class="forum-click">
 	    		Create
 	    	</div>
