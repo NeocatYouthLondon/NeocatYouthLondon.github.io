@@ -57,10 +57,13 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#forum">Forum</a>
+                        <a class="page-scroll" ng-click="show = 'projects'">Forum</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                    	<a class="page-scroll" ng-click="show = 'users'">Users</a>
+                    </li>
+                    <li>
+                        <a class="page-scroll" ng-click="show = 'profile'">My Profile</a>
                     </li>
                 </ul>
             </div>
@@ -71,11 +74,27 @@
 
     <!-- Forum Section -->
     <section id="forum" class="container content-section text-center">
-    	<div class="login" ng-show="show=='login'">
+        <div class="login" ng-show="show=='login'">
     		<div class="form-field"><label for="user-name">Username:</label><input type="text" id="user-name"></div>
     		<div class="form-field" style="margin-bottom: 15px"><label for="user-password">Password:</label><input type="password" id="user-password"></div>
     		<div ng-click="show = 'projects'" class="forum-click">
 	    		Log in
+	    	</div>
+    	</div>
+    	<div class="users" ng-show="show == 'users'">
+    		<div class="user-summary" ng-repeat="user in users" ng-show="user.openToPublic">
+    			<div><img src="{{user.imageURL}}"><span>{{user.firstName}} {{user.surname}}</span></div>
+    			<div><a href="user.websiteURL">Website</a></div>
+    			<div>{{user.experience}}</div>
+    			<div>{{user.skills}}</div>
+    		</div>
+    		<div ng-click="show = 'projects'" class="forum-click">
+	    		Close
+	    	</div>
+    	</div>
+    	<div class="profile" ng-show="show == 'profile'">
+    		<div ng-click="show = 'projects'" class="forum-click">
+	    		Close
 	    	</div>
     	</div>
     	<div class="create-project" ng-show="show=='create-project'">
