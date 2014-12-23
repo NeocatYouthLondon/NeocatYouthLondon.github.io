@@ -2,7 +2,7 @@
 
 }
 
-input::selection{
+input::selection textarea::selection{
 	background: rgb(188, 188, 255);;
 }
 
