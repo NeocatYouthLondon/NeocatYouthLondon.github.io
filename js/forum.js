@@ -122,6 +122,7 @@ var mainModule = angular.module('app', []).
 				additionalThreads = data;
 				console.log("Additional threads: " + additionalThreads)
 				for(var i = 0; i < additionalThreads.length; i++){
+					additionalThreads[i].posts = [];
 					var relevantProject = $scope.getItemFromID($scope.projects, additionalThreads[i].projectID)
 					.threads.push(additionalThreads[i]);
 				}
@@ -139,6 +140,7 @@ var mainModule = angular.module('app', []).
 				additionalProjects = data;
 				console.log("Additional projects: " + additionalProjects)
 				for(var i = 0; i < additionalProjects.length; i++){
+					additionalProjects[i].threads = [];
 					$scope.projects.push(additionalProjects[i]);
 				}
 				$scope.getAllThreads();
