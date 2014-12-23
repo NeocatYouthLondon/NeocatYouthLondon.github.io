@@ -104,7 +104,7 @@ var mainModule = angular.module('app', []).
 				
 				for(var i = 0; i < additionalPosts.length; i++){
 					var relevantProject = $scope.getItemFromID($scope.projects, additionalPosts[i].projectID);
-					var relevantThreadIndex = $scope.getIndexFromID(relevantProject[$scope.getIndexFromID(relevantProject.threads, additionalPosts[i].threadID)]);
+					var relevantThreadIndex = $scope.getIndexFromID(relevantProject.threads, additionalPosts[i].threadID);
 					relevantProject.threads[relevantThreadIndex].posts.push(additionalPosts[i]);
 				}
 			})
