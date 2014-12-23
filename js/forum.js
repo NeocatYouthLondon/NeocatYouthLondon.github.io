@@ -49,17 +49,29 @@ var mainModule = angular.module('app', []).
 			{
 				id: 0,
 				firstName: "Michal",
-				surname: "Paszkiewicz"
+				surname: "Paszkiewicz",
+				imageURL: "http://www.gravatar.com/avatar/f8231ccab5f14c6499e32e17700399d9?d=wavatar",
+				websiteURL: "http://www.michalpaszkiewicz.co.uk",
+				experience: "8 years live guitar playing",
+				skills: "Software"
 			},
 			{
 				id: 1,
 				firstName: "Aaron",
-				surname: "Dennis"
+				surname: "Dennis",
+				imageURL: "https://avatars3.githubusercontent.com/u/9275082?v=3&amp",
+				websiteURL: "https://aaronjden.github.io",
+				experience: "Lots of good experience",
+				skills: "Software"
 			},
 			{
 				id: 2,
 				firstName: "Dave",
-				surname: "Da rave"
+				surname: "Da rave",
+				imageURL: "https://avatars2.githubusercontent.com/u/8076321?v=3&amp",
+				websiteURL: "http://tametheboardgame.com/",
+				experience: "40 years in the circus industry",
+				skills: "Juggling"
 			}
 		];
 		
