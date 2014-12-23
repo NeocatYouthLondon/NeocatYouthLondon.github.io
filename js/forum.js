@@ -8,6 +8,10 @@ var mainModule = angular.module('app', []).
 		$scope.newThreadMessage = "";
 		$scope.newPost = "";
 		
+		function newID(){
+			return ((new Date).getTime() + "").substr(3) + Math.floor(100000 * Math.random());
+		}
+		
 		$scope.openThreads = function(project){
 			$scope.show = "threads"; 
 			$scope.currentProject = project; 
@@ -19,64 +23,55 @@ var mainModule = angular.module('app', []).
 		}
 		
 		$scope.createProject = function(){
-			$scope.projects.push({id: $scope.projects.length, name: $scope.newProjectName, threads: []});
+			var tempID = newID();
+			
+			$scope.projects.push({id: tempID, name: $scope.newProjectName, threads: []});
+			
+			var stringifiedPost = JSON.stringify({id: tempID, name: $scope.newProjectName});
+			$http({method: "POST", url: serverURL + "projects", data: stringifiedPost});
+			
 			$scope.newProjectName = "";
 			$scope.show="projects";
 		}
 		
 		$scope.createThread = function(){
+			var threadID = newID();
+			var postID = newID();
+			
 			$scope.currentProject.threads.push({
 				id: $scope.currentProject.threads.length,
 				subject: $scope.newThreadSubject,
-				posts: [{id: 0, userID: 0, message: $scope.newThreadMessage}]
-			})
+				posts: [{id: threadID, userID: $scope.currentUser.id, message: $scope.newThreadMessage}]
+			});
+			
+			var stringifiedThread = JSON.stringify({id: $scope.projects.length, projectID: $scope.currentProject.id, subject: $scope.newThreadSubject});
+			$http({method: "POST", url: serverURL + "threads", data: stringifiedThread})
+			
+			var stringifiedPost = JSON.stringify({id: postID, userID: $scope.currentUser.id, threadID: threadID, projectID: $scope.currentProject.id, message: $scope.newThreadMessage});
+			$http({method: "POST", url: serverURL + "posts", data: stringifiedPost});
+			
 			$scope.newThreadSubject = "";
 			$scope.newThreadMessage = "";
 			$scope.show="threads";
 		}
 		
 		$scope.sendPost = function(){
+			var postID = newID();
+			
 			$scope.currentThread.posts.push({
-				id: $scope.currentThread.posts.length,
-				userID: 2,
+				id: postID,
+				userID: $scope.currentUser.id,
+				projectID: $scope.currentProject.id,
 				message: $scope.newPost
 			});
+			
+			var stringifiedPost = JSON.stringify({id: postID, userID: $scope.currentUser.id, threadID: $scope.currentThread.id, projectID: $scope.currentProject.id, message: $scope.newThreadMessage});
+			$http({method: "POST", url: serverURL + "posts", data: stringifiedPost});
 			
 			$scope.newPost= "";
 		}
 		
-		$scope.users = [
-			{
-				id: 0,
-				firstName: "Michal",
-				surname: "Paszkiewicz",
-				imageURL: "http://www.gravatar.com/avatar/f8231ccab5f14c6499e32e17700399d9?d=wavatar",
-				websiteURL: "http://www.michalpaszkiewicz.co.uk",
-				experience: "8 years live guitar playing",
-				skills: "Software",
-				openToPublic: true
-			},
-			{
-				id: 1,
-				firstName: "Aaron",
-				surname: "Dennis",
-				imageURL: "https://avatars3.githubusercontent.com/u/9275082?v=3&amp",
-				websiteURL: "https://aaronjden.github.io",
-				experience: "Lots of good experience",
-				skills: "Software",
-				openToPublic: true 
-			},
-			{
-				id: 2,
-				firstName: "Dave",
-				surname: "Da rave",
-				imageURL: "https://avatars2.githubusercontent.com/u/8076321?v=3&amp",
-				websiteURL: "http://tametheboardgame.com/",
-				experience: "40 years in the circus industry",
-				skills: "Juggling",
-				openToPublic: true
-			}
-		];
+		$scope.users = [];
 		
 		$scope.getItemFromID = function(array, id)
 		{
@@ -98,112 +93,61 @@ var mainModule = angular.module('app', []).
 			return false;
 		}
 		
-		$scope.projects = [
-			{
-				id: 0, 
-				name: "Prince of Egypt",
-				threads: [
-					{
-						id: 0, 
-						projectID: 0, 
-						subject: "when to do this",
-						posts: [
-							{
-								id: 0,
-								userID: 0,
-								threadID: 0,
-								projectID: 0,
-								date: "2014",
-								message: "hi"
-							},
-							{
-								id: 1,
-								userID: 2,
-								threadID: 0,								threadID: 0,
-								projectID: 0,
-								date: "2014",
-								message: "hi"
-							}
-						]
-					},
-					{
-						id: 1, 
-						projectID: 0, 
-						subject: "stuff and things",
-						posts: [
-							{
-								id: 2,
-								userID: 1,
-								threadID: 1,
-								projectID: 0,
-								date: "2014",
-								message: "yo"
-							},
-							{
-								id: 3,
-								userID: 2,
-								threadID: 1,
-								projectID: 0,
-								date: "2014",
-								message: "kazaa"
-							}
-						]
-					}
-				]
-			},
-			{
-				id: 1, 
-				name: "The Lion King",
-				threads: [
-					{
-						id: 0, 
-						projectID: 0, 
-						subject: "when to do this",
-						posts: [
-							{
-								id: 0,
-								userID: 0,
-								threadID: 0,
-								projectID: 0,
-								date: "2014",
-								message: "hi"
-							},
-							{
-								id: 1,
-								userID: 2,
-								threadID: 0,								threadID: 0,
-								projectID: 0,
-								date: "2014",
-								message: "hi"
-							}
-						]
-					},
-					{
-						id: 1, 
-						projectID: 0, 
-						subject: "stuff and things",
-						posts: [
-							{
-								id: 2,
-								userID: 1,
-								threadID: 1,
-								projectID: 0,
-								date: "2014",
-								message: "yo"
-							},
-							{
-								id: 3,
-								userID: 2,
-								threadID: 1,
-								projectID: 0,
-								date: "2014",
-								message: "kazaa"
-							}
-						]
-					}
-				]
-			}
-		];
+		$scope.projects = [];
+		
+		$scope.getAllPosts = functions(){
+			var additionalPosts = [];
+			$http({method: "GET", url: serverURL + "posts"})
+				.success(function(data, status){
+					additionalPosts = data;
+					console.log("Additional posts: " + additionalPosts);
+				
+				for(var i = 0; i < additionalPosts.length; i++){
+					var relevantProject = $scope.getItemFromID($scope.projects, additionalPosts[i].projectID);
+					var relevantThreadIndex = $scope.getIndexFromID(relevantProject[$scope.getIndexFromID(relevantProject.threads, additionalPosts[i].threadID)]);
+					relevantProject.threads[relevantThreadIndex].posts.push(additionalPosts[i]);
+				}
+			})
+			.error(function(data, status){
+				additionalPosts = data || "Request failed";
+				console.log(additionalPosts);
+			});
+		}
+		
+		$scope.getAllThreads = function(){
+			var additionalThreads = [];
+			
+			$http({method: "GET", url: serverURL + "threads"})
+			.success(function(data, status){
+				additionalThreads = data;
+				console.log("Additional threads: " + additionalThreads)
+				for(var i = 0; i < additionalThreads.length; i++){
+					var relevantProject = $scope.getItemFromID($scope.projects, additionalThreads[i].projectID)
+					.threads.push(additionalThreads[i]);
+				}
+				$scope.getAllPosts();
+			}).error(function(data, status){
+				console.log("Threads Fail");	
+			});
+		}
+		
+		$scope.getAllData = function(){
+			var additionalProjects = [];
+			
+			$http({method: "GET", url: serverURL + "projects"})
+			.success(function(data, status){
+				additionalProjects = data;
+				console.log("Additional projects: " + additionalProjects)
+				for(var i = 0; i < additionalProjects.length; i++){
+					$scope.projects.push(additionalProjects[i]);
+				}
+				$scope.getAllThreads();
+			}).error(function(data, status){
+				console.log("Threads Fail");	
+			});
+		}
+		
+		$scope.getAllData();
 		
 		$scope.currentUser = null;
 		$scope.loggedIn = false;
