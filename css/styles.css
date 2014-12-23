@@ -6,7 +6,7 @@ input::selection, textarea::selection{
 	background: rgb(188, 188, 255);;
 }
 
-.forum .thread-post{
+.forum .thread-post, .forum textarea{
 	user-select: text;
 	-webkit-user-select: text;
 	-moz-user-select: text;
