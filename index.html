@@ -64,7 +64,10 @@
                         <a class="page-scroll" href="#contact">Contact</a>
                     </li>
                     <li>
-                    	<a href="forum.html">Members area</a>
+                    	<a class="page-scroll" href="#members">Members</a>
+                    </li>
+                    <li>
+                    	<a href="forum.html">Log in</a>
                     </li>
                 </ul>
             </div>
@@ -136,6 +139,25 @@
                 </ul>
             </div>
         </div>
+    </section>
+    
+    <!-- Members -->
+    <section id="members">
+    	<script>
+    	$.getJSON(serverURL + "posts", function( data ) {
+	  var items = [];
+	  $.each( data, function( key, val ) {
+	  	if(val.openToPublic){
+		    items.push( 
+		    	 '<div class="user-summary" style="display: inline-block;"><div><img src="' + val.imageURL + '" width=100 height=100><span>' + val.firstName + " " + val.surname + '</span></div><div><a href="' + val.websiteURL + '" target="_blank">Website</a></div>'
+	    		+ '<div>' + val.experience + '</div><div>' + val.skills + '</div></div>'
+		  }});
+	  
+	  $( "<div/>", {
+	    html: items.join( "" )
+	  }).appendTo( "#members" );
+	});
+	</script>
     </section>
 
     <!-- Map Section -->
