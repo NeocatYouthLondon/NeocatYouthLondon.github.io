@@ -1,5 +1,7 @@
 var mainModule = angular.module('app', []).
 	controller("forumCtrl", function forumCtrl($scope, $window, $timeout, $http){
+		//todo: change this later to be assigned on login.
+		$scope.currentUser = $scope.users[0];
 		$scope.currentProject = null;
 		$scope.currentThread = null;
 		$scope.show = "login";
