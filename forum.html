@@ -151,7 +151,7 @@
     			{{currentProject.name}}  >--->  {{currentThread.subject}}
     		</div>
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
-    			<span class="user-name">{{getItemFromID(users, post.userID).firstName + ": "}}</span><span>{{post.message}}</span>
+    			<span class="user-name"><img ng-src="{{getItemFromID(users, post.userID).imageURL}}" width=50 height=50>{{getItemFromID(users, post.userID).firstName + ": "}}</span><span>{{post.message}}</span>
 	    	</div>
 	    	<textarea ng-model="newPost" style="max-width: 100%; min-width: 100%; width: 100%"></textarea>
 	    	<div class="forum-click" ng-click="sendPost()">
