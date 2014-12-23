@@ -144,6 +144,8 @@
     <!-- Members -->
     <section id="members">
     	<script>
+    $( document ).ready(function() {
+
     	$.getJSON(serverURL + "posts", function( data ) {
 	  var items = [];
 	  $.each( data, function( key, val ) {
@@ -157,6 +159,9 @@
 	    html: items.join( "" )
 	  }).appendTo( "#members" );
 	});
+	
+
+});
 	</script>
     </section>
 
