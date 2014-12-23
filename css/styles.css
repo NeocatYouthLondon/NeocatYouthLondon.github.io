@@ -64,3 +64,8 @@
 	padding: 0 10px;
 	border-radius: 10px;
 }
+
+.forum .users .user-summary{
+	display:inline-block;
+	margin: 15px;
+}
