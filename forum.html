@@ -83,7 +83,7 @@
     	</div>
     	<div class="users" ng-show="show == 'users'">
     		<div class="user-summary" ng-repeat="user in users" ng-show="user.openToPublic">
-    			<div><img src="{{user.imageURL}}"><span>{{user.firstName}} {{user.surname}}</span></div>
+    			<div><img src="{{user.imageURL}}" width=100 height=100><span>{{user.firstName}} {{user.surname}}</span></div>
     			<div><a href="user.websiteURL">Website</a></div>
     			<div>{{user.experience}}</div>
     			<div>{{user.skills}}</div>
