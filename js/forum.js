@@ -47,7 +47,7 @@ var mainModule = angular.module('app', []).
 			var stringifiedThread = JSON.stringify({id: $scope.projects.length, projectID: $scope.currentProject.id, subject: $scope.newThreadSubject});
 			$http({method: "POST", url: serverURL + "threads", data: stringifiedThread})
 			
-			var stringifiedPost = JSON.stringify({id: postID, userID: $scope.currentUser.id, threadID: threadID, projectID: $scope.currentProject.id, message: $scope.newThreadMessage});
+			var stringifiedPost = JSON.stringify({id: postID, userID: $scope.currentUser.id, threadID: threadID, projectID: $scope.currentProject.id, date: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''), message: $scope.newThreadMessage});
 			$http({method: "POST", url: serverURL + "posts", data: stringifiedPost});
 			
 			$scope.newThreadSubject = "";
@@ -61,7 +61,9 @@ var mainModule = angular.module('app', []).
 			$scope.currentThread.posts.push({
 				id: postID,
 				userID: $scope.currentUser.id,
+				threadID: $scope.currentThread.id,
 				projectID: $scope.currentProject.id,
+				date: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''),
 				message: $scope.newPost
 			});
 			
