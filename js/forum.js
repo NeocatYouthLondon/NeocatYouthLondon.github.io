@@ -216,7 +216,7 @@ var mainModule = angular.module('app', []).
 			if($scope.loginName == "" || $scope.loginPass==""){ $scope.loginFailed = true; return; }
 			
 			var stringifiedPost = JSON.stringify({userName: $scope.loginName, password: $scope.loginPass});
-			$http({method: "GET", url: serverURL + "/posts", data: stringifiedPost}).success(function(data, status){
+			$http({method: "GET", url: serverURL + "login", data: stringifiedPost}).success(function(data, status){
 				if(data){
 					//todo: change this later to be assigned on login.
 					$scope.currentUser = $scope.getItemFromID($scope.users, data.id);
