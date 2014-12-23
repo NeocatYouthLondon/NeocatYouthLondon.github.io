@@ -12,7 +12,7 @@ input::selection{
 	-moz-user-select: text;
 }
 
-.forum .thread-post::selection{
+.forum .thread-post::selection, .forum span::selection, .forum .thread-post span::selection{
 	background: rgba(255, 193, 113, 0.88);
 }
 
