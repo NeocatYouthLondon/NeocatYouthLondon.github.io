@@ -67,7 +67,7 @@ var mainModule = angular.module('app', []).
 				message: $scope.newPost
 			});
 			
-			var stringifiedPost = JSON.stringify({id: postID, userID: $scope.currentUser.id, threadID: $scope.currentThread.id, projectID: $scope.currentProject.id, message: $scope.newThreadMessage});
+			var stringifiedPost = JSON.stringify({id: postID, userID: $scope.currentUser.id, threadID: $scope.currentThread.id, projectID: $scope.currentProject.id, date: new Date().toISOString().replace(/T/, ' ').replace(/\..+/, ''), message: $scope.newPost});
 			$http({method: "POST", url: serverURL + "posts", data: stringifiedPost});
 			
 			$scope.newPost= "";
