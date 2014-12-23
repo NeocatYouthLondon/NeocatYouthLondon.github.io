@@ -68,6 +68,8 @@
 .forum .users .user-summary{
 	display:inline-block;
 	margin: 15px;
+	padding: 10px;
+	background: rgb(42, 40, 40);;
 }
 
 .forum .users .user-summary img{
