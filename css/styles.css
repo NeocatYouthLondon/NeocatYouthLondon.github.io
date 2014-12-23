@@ -78,6 +78,7 @@ input::selection{
 	padding: 10px;
 	background: rgb(42, 40, 40);
 	border-radius: 10px;
+	vertical-align: top;
 }
 
 .forum .profile{
