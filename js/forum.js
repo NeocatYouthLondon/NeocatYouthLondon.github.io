@@ -210,16 +210,21 @@ var mainModule = angular.module('app', []).
 		$scope.loginFailed = false;
 	
 		$scope.login = function(){
-			if(true){
-				//todo: change this later to be assigned on login.
-				$scope.currentUser = $scope.users[0];
-				$scope.loginFailed = false;
-				$scope.loggedIn = true;
-				$scope.show = 'projects';
-			}
-			else{
-				$scope.loginFailed = true;
-			}
+			var stringifiedPost = JSON.stringify(postObject);
+			$http({method: "POST", url: serverURL + "/posts", data: stringifiedPost}).success(function(data, status){
+				if(data){
+					//todo: change this later to be assigned on login.
+					$scope.currentUser = $scope.users[0];
+					$scope.loginFailed = false;
+					$scope.loggedIn = true;
+					$scope.show = 'projects';
+				}
+				else{
+					$scope.loginFailed = true;
+				}
+				
+				console.log(data);
+			});
 		}
 		
 		$scope.logout = function(){
