@@ -205,14 +205,14 @@ var mainModule = angular.module('app', []).
 			}
 		];
 		
-		
-		//todo: change this later to be assigned on login.
-		$scope.currentUser = $scope.users[0];
+		$scope.currentUser = null;
 		$scope.loggedIn = false;
 		$scope.loginFailed = false;
 	
 		$scope.login = function(){
 			if(true){
+				//todo: change this later to be assigned on login.
+				$scope.currentUser = $scope.users[0];
 				$scope.loginFailed = false;
 				$scope.loggedIn = true;
 				$scope.show = 'projects';
@@ -220,6 +220,12 @@ var mainModule = angular.module('app', []).
 			else{
 				$scope.loginFailed = true;
 			}
+		}
+		
+		$scope.logout = function(){
+			$scope.currentUser = null;
+			$scope.loggedIn = false;
+			$scope.show = 'login';
 		}
 	
 	}).directive('selectOnClick', function () {
