@@ -54,7 +54,7 @@ var mainModule = angular.module('app', []).
 				websiteURL: "http://www.michalpaszkiewicz.co.uk",
 				experience: "8 years live guitar playing",
 				skills: "Software",
-				openToPublic: false
+				openToPublic: true
 			},
 			{
 				id: 1,
