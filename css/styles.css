@@ -6,6 +6,16 @@ input::selection{
 	background: rgb(188, 188, 255);;
 }
 
+.forum .thread-post{
+	user-select: text;
+	-webkit-user-select: text;
+	-moz-user-select: text;
+}
+
+.forum .thread-post::selection{
+	background: rgba(255, 193, 113, 0.88);
+}
+
 #forum{
 	padding-top: 150px;
 }
