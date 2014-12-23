@@ -89,7 +89,7 @@ input::selection, textarea::selection{
 	border-radius: 10px;
 }
 
-.forum .users .user-summary{
+.users .user-summary, #members .user-summary{
 	display:inline-block;
 	margin: 15px;
 	padding: 10px;
@@ -98,13 +98,20 @@ input::selection, textarea::selection{
 	vertical-align: top;
 }
 
+#members{
+	width: 95%;
+	max-width: 1000px;
+	margin: auto;
+	text-align: center;
+}
+
 .forum .profile{
 	padding-top: 20px;
 	background: rgb(42, 40, 40);
 	border-radius: 10px;
 }
 
-.forum .users .user-summary img, .forum .profile img{
+.users .user-summary img, #members .user-summary img, .profile img{
 	border-radius: 10px;
 	margin: 5px;
 }
