@@ -188,7 +188,7 @@ var mainModule = angular.module('app', []).
 			});
 			
 			//todo: will need to find a way to update data!
-			 $timeout($scope.getAllData, 8000);
+			 $timeout($scope.getAllData, 10000);
 		}
 		
 		$scope.getAllData();
