@@ -95,6 +95,15 @@ var mainModule = angular.module('app', []).
 			return false;
 		};
 		
+		$scope.hasItemWithID = function(array, id){
+			for(var i = 0; i < array.length; i++){
+				if(array[i].id == id){
+					return true;
+				}
+			}
+			return false;
+		}
+		
 		$scope.projects = [];
 		
 		$scope.getAllPosts = function(){
@@ -107,7 +116,10 @@ var mainModule = angular.module('app', []).
 				for(var i = 0; i < additionalPosts.length; i++){
 					var relevantProject = $scope.getItemFromID($scope.projects, additionalPosts[i].projectID);
 					var relevantThreadIndex = $scope.getIndexFromID(relevantProject.threads, additionalPosts[i].threadID);
-					relevantProject.threads[relevantThreadIndex].posts.push(additionalPosts[i]);
+					
+					if(!$scope.hasItemWithID(relevantProject.threads[relevantThreadIndex].posts, additionalPosts[i].id)){
+						relevantProject.threads[relevantThreadIndex].posts.push(additionalPosts[i]);
+					}
 				}
 			})
 			.error(function(data, status){
@@ -124,9 +136,12 @@ var mainModule = angular.module('app', []).
 				additionalThreads = data;
 				console.log("Additional threads: " + additionalThreads)
 				for(var i = 0; i < additionalThreads.length; i++){
-					additionalThreads[i].posts = [];
-					var relevantProject = $scope.getItemFromID($scope.projects, additionalThreads[i].projectID)
-					.threads.push(additionalThreads[i]);
+					var relevantProject = $scope.getItemFromID($scope.projects, additionalThreads[i].projectID);
+					
+					if(!$scope.hasItemWithID(relevantProject.threads, additionalThreads[i].id)){
+						additionalThreads[i].posts = [];
+						relevantProject.threads.push(additionalThreads[i]);
+					}
 				}
 				$scope.getAllPosts();
 			}).error(function(data, status){
@@ -141,7 +156,12 @@ var mainModule = angular.module('app', []).
 			.success(function(data, status){
 				additionalUsers = data;
 				console.log("Additional projects: " + additionalUsers)
-				$scope.users = data;
+				
+				for(var i = 0; i< additionalUsers.length; i++){
+					if(!$scope.hasItemWithID($scope.users, additionalUsers[i].id)){
+						$scope.users.push(additionalUsers[i]);
+					}
+				}
 			}).error(function(data, status){
 				console.log("Threads Fail");	
 			});
@@ -150,8 +170,6 @@ var mainModule = angular.module('app', []).
 		$scope.getAllData = function(){
 			$scope.getAllUsers();
 			
-			$scope.projects = [];
-			
 			var additionalProjects = [];
 		
 			$http({method: "GET", url: serverURL + "projects"})
@@ -159,8 +177,10 @@ var mainModule = angular.module('app', []).
 				additionalProjects = data;
 				console.log("Additional projects: " + additionalProjects)
 				for(var i = 0; i < additionalProjects.length; i++){
-					additionalProjects[i].threads = [];
-					$scope.projects.push(additionalProjects[i]);
+					if(!$scope.hasItemWithID($scope.projects, additionalProjects[i].id)){
+						additionalProjects[i].threads = [];
+						$scope.projects.push(additionalProjects[i]);
+					}
 				}
 				$scope.getAllThreads();
 			}).error(function(data, status){
