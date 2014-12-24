@@ -10,6 +10,13 @@ var mainModule = angular.module('app', []).
 		$scope.loadedData = false;
 		$scope.notifications = [];
 		
+		$scope.moveTo = function(notification){
+			var tempProject = $scope.getItemFromID($scope.projects, notification.projectID);
+			$scope.currentProject = tempProject;
+			$scope.currentThread = $scope.getItemFromID(tempProject.threads, notification.threadID);
+			$scope.show = "posts";
+		}
+		
 		function newID(){
 			return ((new Date).getTime() + "").substr(3) + Math.floor(100000 * Math.random());
 		}
