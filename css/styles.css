@@ -2,6 +2,10 @@
 
 }
 
+.forum #notifications{
+	background: yellow;
+}
+
 .page-scroll{
 	cursor: pointer;
 }
