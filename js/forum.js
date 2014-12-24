@@ -141,9 +141,7 @@ var mainModule = angular.module('app', []).
 			.success(function(data, status){
 				additionalUsers = data;
 				console.log("Additional projects: " + additionalUsers)
-				for(var i = 0; i < additionalUsers.length; i++){
-					$scope.users.push(additionalUsers[i]);
-				}
+				$scope.users = data;
 			}).error(function(data, status){
 				console.log("Threads Fail");	
 			});
@@ -151,6 +149,8 @@ var mainModule = angular.module('app', []).
 		
 		$scope.getAllData = function(){
 			$scope.getAllUsers();
+			
+			$scope.projects = [];
 			
 			var additionalProjects = [];
 		
@@ -166,6 +166,8 @@ var mainModule = angular.module('app', []).
 			}).error(function(data, status){
 				console.log("Threads Fail");	
 			});
+			
+			 $timeout($scope.getAllData, 8000);
 		}
 		
 		$scope.getAllData();
