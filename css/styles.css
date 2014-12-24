@@ -4,6 +4,8 @@
 
 .forum #notifications{
 	background: yellow;
+	color: black;
+	line-height: 15px;
 }
 
 .page-scroll{
