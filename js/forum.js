@@ -7,7 +7,7 @@ var mainModule = angular.module('app', []).
 		$scope.newThreadSubject = "";
 		$scope.newThreadMessage = "";
 		$scope.newPost = "";
-		$scope.numberOfNotifications = 0;
+		$scope.notifications = [];
 		
 		function newID(){
 			return ((new Date).getTime() + "").substr(3) + Math.floor(100000 * Math.random());
@@ -120,6 +120,8 @@ var mainModule = angular.module('app', []).
 					
 					if(!$scope.hasItemWithID(relevantProject.threads[relevantThreadIndex].posts, additionalPosts[i].id)){
 						relevantProject.threads[relevantThreadIndex].posts.push(additionalPosts[i]);
+						
+						$scope.notifications.push({userID:  additionalPosts[i].userID, projectID:  additionalPosts[i].projectID, threadID: additionalPosts[i].threadID});
 					}
 				}
 			})
