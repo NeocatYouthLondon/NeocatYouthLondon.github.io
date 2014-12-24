@@ -93,7 +93,7 @@
     	    	<div class="form-field"><label for="user-experience">Experience:</label><input select-on-click type="text" ng-model="currentUser.experience" id="user-experience"></div>
     	    	<div class="form-field"><label for="user-skills">Skills:</label><input select-on-click type="text" ng-model="currentUser.skills" id="user-skills"></div>
     	    	<div class="form-field"><label for="user-public" style="vertical-align: 13px;">Make profile visible to public:</label><input style="width: 30px;" select-on-click type="checkbox" ng-model="currentUser.openToPublic" id="user-public"></div>
-    	    	<div ng-click="" class="forum-click">
+    	    	<div ng-click="updateProfile()" class="forum-click">
 	    		Save
 	    	</div>
 	    	<div ng-click="show='changePassword'" class="forum-click">
@@ -105,7 +105,7 @@
     		<div class="form-field"><label for="user-password">Current password:</label><input select-on-click type="text" ng-model="userPassword" id="user-password"></div>
     		<div class="form-field"><label for="user-new-password">New password:</label><input select-on-click type="text" ng-model="userNewPassword" id="user-new-password"></div>
     		<div class="form-field"><label for="user-retype-password">Retype new password:</label><input select-on-click type="text" ng-model="userRetypePassword" id="user-retype-password"></div>
-		<div ng-click="" class="forum-click">
+		<div ng-click="changePassword()" class="forum-click">
 	    		Change password
 	    	</div>
 	    	<div ng-click="show='profile'" class="forum-click">
