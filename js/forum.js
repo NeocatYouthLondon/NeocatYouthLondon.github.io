@@ -7,6 +7,7 @@ var mainModule = angular.module('app', []).
 		$scope.newThreadSubject = "";
 		$scope.newThreadMessage = "";
 		$scope.newPost = "";
+		$scope.numberOfNotifications = 0;
 		
 		function newID(){
 			return ((new Date).getTime() + "").substr(3) + Math.floor(100000 * Math.random());
