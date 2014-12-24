@@ -197,6 +197,22 @@ var mainModule = angular.module('app', []).
 			});
 		}
 		
+		$scope.updateProfile = function(){
+			var stringifiedPost = JSON.stringify($scope.currentUser);
+			$http({method: "POST", url: serverURL + "updateProfile", data: stringifiedPost})
+		}
+		
+		$scope.changePassword = function(){
+			var stringifiedPost = JSON.stringify({ userID: $scope.currentUser.id, password: $scope.userPassword, newPassword: $scope.userNewPassword });
+			$http({method: "POST", url: serverURL + "changePassword", data: stringifiedPost})
+			
+			$scope.userPassword = "";
+			$scope.userNewPassword = "";
+			$scope.userRetypePassword = "";
+			
+			$scope.show = "profile";
+		}
+		
 		$scope.logout = function(){
 			$scope.currentUser = null;
 			$scope.loggedIn = false;
