@@ -7,6 +7,7 @@ var mainModule = angular.module('app', []).
 		$scope.newThreadSubject = "";
 		$scope.newThreadMessage = "";
 		$scope.newPost = "";
+		$scope.loadedData = false;
 		$scope.notifications = [];
 		
 		function newID(){
@@ -121,9 +122,13 @@ var mainModule = angular.module('app', []).
 					if(!$scope.hasItemWithID(relevantProject.threads[relevantThreadIndex].posts, additionalPosts[i].id)){
 						relevantProject.threads[relevantThreadIndex].posts.push(additionalPosts[i]);
 						
-						$scope.notifications.push({userID:  additionalPosts[i].userID, projectID:  additionalPosts[i].projectID, threadID: additionalPosts[i].threadID});
+						if($scope.loadedData){
+							$scope.notifications.push({userID:  additionalPosts[i].userID, projectID:  additionalPosts[i].projectID, threadID: additionalPosts[i].threadID});
+						}
 					}
 				}
+				
+				$scope.loadedData = true;
 			})
 			.error(function(data, status){
 				additionalPosts = data || "Request failed";
