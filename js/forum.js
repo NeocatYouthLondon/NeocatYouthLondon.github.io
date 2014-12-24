@@ -167,7 +167,8 @@ var mainModule = angular.module('app', []).
 				console.log("Threads Fail");	
 			});
 			
-			 $timeout($scope.getAllData, 8000);
+			//todo: will need to find a way to update data!
+			 //$timeout($scope.getAllData, 8000);
 		}
 		
 		$scope.getAllData();
