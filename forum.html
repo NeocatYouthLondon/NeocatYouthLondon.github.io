@@ -46,7 +46,7 @@
                 <button type="button" class="navbar-toggle" ng-show="loggedIn" ng-click="showNavBar = !showNavBar">
                     <i class="fa fa-bars"></i>
                 </button>
-                <button type="button" id="notifications" class="navbar-toggle" ng-show="loggedIn" style="height: 34px; width: 34px;">
+                <button type="button" id="notifications" class="navbar-toggle" ng-show="loggedIn" ng-click="showNotifications = true;" style="height: 34px; width: 34px;">
             		{{notifications.length}}
             	</button>
                 <a class="navbar-brand page-scroll" href="index.html">
@@ -58,7 +58,7 @@
             <div class="navbar-collapse navbar-right navbar-main-collapse" ng-class="{collapse: !showNotifications}" ng-click="showNotifications = false">
                 <ul class="nav navbar-nav">
                     <li ng-repeat="notification in notifications">
-                        <a class="page-scroll" ng-click="">{{getItemFromID(users,notification.userID).firstName}} has posted in {{getItemFromID(projects,notification.projectID).name}}</a>
+                        <a class="page-scroll" ng-click="moveTo(notification)">{{getItemFromID(users,notification.userID).firstName}} has posted in {{getItemFromID(projects,notification.projectID).name}}</a>
                     </li>
                 </ul>
             </div>
