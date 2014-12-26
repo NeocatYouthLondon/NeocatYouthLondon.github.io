@@ -15,6 +15,7 @@ var mainModule = angular.module('app', []).
 			$scope.currentProject = tempProject;
 			$scope.currentThread = $scope.getItemFromID(tempProject.threads, notification.threadID);
 			$scope.show = "posts";
+			$scope.notifications.splice($scope.notifications.indexOf(notification), 1);
 		}
 		
 		function newID(){
