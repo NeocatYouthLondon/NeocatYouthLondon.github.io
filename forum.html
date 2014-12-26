@@ -55,7 +55,7 @@
             </div>
             
             <!-- Notifications -->
-            <div class="navbar-collapse navbar-right navbar-main-collapse" ng-class="{collapse: !showNotifications}" ng-click="showNotifications = false">
+            <div class="navbar-right" ng-class="{collapse: !showNotifications}" ng-click="showNotifications = false">
                 <ul class="nav navbar-nav">
                     <li ng-repeat="notification in notifications">
                         <a class="page-scroll" ng-click="moveTo(notification)" ng-click="showNotifications = false;">{{getItemFromID(users,notification.userID).firstName}} has posted in {{getItemFromID(projects,notification.projectID).name}}</a>
