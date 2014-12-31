@@ -62,14 +62,18 @@ input::selection, textarea::selection{
 .forum .thread-post span{
 }
 
-.forum span.user-name img{
+.forum span.user-name img, .forum div.user-name img, .forum .user-name img{
 	margin-right: 10px;
 }
 
-.forum .thread-post span.user-name{
+.forum .thread-post span.user-name, .forum .thread-post div.user-name, .forum .thread-post .user-name{
 	background: rgb(177, 218, 182);
 	display: inline-block;
 	min-width: 150px;
+}
+
+.post-div{
+	display: inline-block;
 }
 
 .forum .title-block{
