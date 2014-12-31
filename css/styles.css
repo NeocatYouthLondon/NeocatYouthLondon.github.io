@@ -57,6 +57,7 @@ input::selection, textarea::selection{
 	color: black;
 	border-bottom: 1px black solid;
 	text-align: left;
+	padding-left: 150px;
 }
 
 .forum .thread-post span{
@@ -70,10 +71,12 @@ input::selection, textarea::selection{
 	background: rgb(177, 218, 182);
 	display: inline-block;
 	min-width: 150px;
+	margin-left: -150px;
 }
 
 .post-div{
 	display: inline-block;
+	vertical-align: text-top;
 }
 
 .forum .title-block{
