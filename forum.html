@@ -106,10 +106,10 @@
     	    	<div class="form-field"><label for="user-experience">Experience:</label><input select-on-click type="text" ng-model="currentUser.experience" id="user-experience"></div>
     	    	<div class="form-field"><label for="user-skills">Skills:</label><input select-on-click type="text" ng-model="currentUser.skills" id="user-skills"></div>
     	    	<div class="form-field"><label for="user-public" style="vertical-align: 13px;">Make profile visible to public:</label><input style="width: 30px;" select-on-click type="checkbox" ng-model="currentUser.openToPublic" id="user-public"></div>
-    	    	<div ng-click="updateProfile()" class="forum-click">
+    	    	<div ng-click="updateProfile()" class="forum-click" style="float:right;">
 	    		Save
 	    	</div>
-	    	<div ng-click="show='changePassword'" class="forum-click">
+	    	<div ng-click="show='changePassword'" class="forum-click" style="float:right;">
 	    		Change password
 	    	</div>
     	</div>
@@ -118,10 +118,10 @@
     		<div class="form-field"><label for="user-password">Current password:</label><input select-on-click type="password" ng-model="userPassword" id="user-password"></div>
     		<div class="form-field"><label for="user-new-password">New password:</label><input select-on-click type="password" ng-model="userNewPassword" id="user-new-password"></div>
     		<div class="form-field"><label for="user-retype-password">Retype new password:</label><input select-on-click type="password" ng-model="userRetypePassword" id="user-retype-password"></div>
-		<div ng-click="changePassword()" class="forum-click">
+		<div ng-click="changePassword()" class="forum-click" style="float:right;">
 	    		Change password
 	    	</div>
-	    	<div ng-click="show='profile'" class="forum-click">
+	    	<div ng-click="show='profile'" class="forum-click" style="float:left;">
 	    		Cancel
 	    	</div>
     	</div>
@@ -135,21 +135,21 @@
     	</div>
     	<div class="create-project" ng-show="show=='create-project'">
     		<div class="form-field" style="margin-bottom: 15px"><label for="project-name">Project name:</label><input select-on-click ng-model="newProjectName" type="text" id="project-name"></div>
-    		<div ng-click="createProject()" class="forum-click">
+    		<div ng-click="createProject()" class="forum-click" style="float:right;">
 	    		Create
 	    	</div>
-	    	<div ng-click="show = 'projects'" class="forum-click">
-	    		Close
+	    	<div ng-click="show = 'projects'" class="forum-click" style="float:left;">
+	    		Back
 	    	</div>
     	</div>
     	<div class="create-thread" ng-show="show=='create-thread'">
     	    	<div class="form-field"><label for="thread-subject">Subject:</label><input select-on-click type="text" ng-model="newThreadSubject" id="thread-subject"></div>
     		<div class="form-field" style="margin-bottom: 15px"><label for="thread-message">Message:</label><input select-on-click ng-model="newThreadMessage" type="text" id="thread-message"></div>
-    		<div ng-click="createThread()" class="forum-click">
+    		<div ng-click="createThread()" class="forum-click" style="float:right;">
 	    		Create
 	    	</div>
-	    	<div ng-click="show = 'threads'" class="forum-click">
-	    		Close
+	    	<div ng-click="show = 'threads'" class="forum-click" style="float:left;">
+	    		Back
 	    	</div>
     	</div>
     	<div class="projects-list" ng-show="show == 'projects'">
@@ -159,7 +159,7 @@
 	        <div class="forum-click" ng-repeat="project in projects" ng-click="openThreads(project)">
 	        	{{project.name}}
 	        </div>
-	        <div class="forum-click" ng-click="show='create-project'">
+	        <div class="forum-click" ng-click="show='create-project'" style="float:right;">
 	        	Create new project
 	        </div>
         </div>
@@ -170,11 +170,11 @@
         	<div ng-repeat="thread in currentProject.threads" class="forum-click" ng-click="openPosts(thread)">
     			{{thread.subject}}
 	    	</div>
-	    	<div class="forum-click" ng-click="show='create-thread'">
+	    	<div class="forum-click" ng-click="show='create-thread'" style="float:right;">
 	    		Create new thread
 	    	</div>
-	    	<div ng-click="show = 'projects'" class="forum-click">
-	    		Close
+	    	<div ng-click="show = 'projects'" class="forum-click" style="float:left;">
+	    		Back
 	    	</div>
         </div>
         <div class="posts-list ng-hide" ng-show="show == 'posts'">
@@ -189,7 +189,7 @@
 	    		Send message
 	    	</div>
 	    	<div ng-click="show = 'threads'" class="forum-click" style="float:left;">
-	    		Close
+	    		Back
 	    	</div>
         </div>
     </section>
