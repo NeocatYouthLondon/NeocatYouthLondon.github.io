@@ -68,6 +68,11 @@ var mainModule = angular.module('app', []).
 		$scope.sendPost = function(){
 			var postID = newID();
 			
+			if($scope.newPost == ""){
+				alert("Please write the message before trying to send it!")
+				return;
+			}
+			
 			$scope.currentThread.posts.push({
 				id: postID,
 				userID: $scope.currentUser.id,
