@@ -35,6 +35,11 @@ var mainModule = angular.module('app', []).
 		$scope.createProject = function(){
 			var tempID = newID();
 			
+			if($scope.newProjectName == ""){
+				alert("Please set a project name to create the thread.");
+				return;
+			}
+			
 			$scope.projects.push({id: tempID, name: $scope.newProjectName, threads: []});
 			
 			var stringifiedPost = JSON.stringify({id: tempID, name: $scope.newProjectName});
@@ -45,6 +50,12 @@ var mainModule = angular.module('app', []).
 		}
 		
 		$scope.createThread = function(){
+			
+			if($scope.newThreadSubject == "" || $scope.newThreadMessage == ""){
+				alert("Please set a thread subject and thread message before trying to create a thread.")
+				return;
+			}
+			
 			var threadID = newID();
 			var postID = newID();
 			
