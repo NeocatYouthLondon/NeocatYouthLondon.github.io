@@ -133,12 +133,12 @@ a:focus {
 
 .intro {
     display: table;
+    position: relative;
     width: 100%;
     height: auto;
     padding: 100px 0;
     text-align: center;
     color: #fff;
-    background: url(../img/first-pic.jpg) no-repeat bottom center scroll;
     background-color: #000;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -149,6 +149,22 @@ a:focus {
 .intro .intro-body {
     display: table-cell;
     vertical-align: middle;
+    position: relative;
+    z-index: 10;
+}
+
+.intro .intro-bg{
+        background: url(../img/first-pic.jpg) no-repeat bottom center scroll;
+        background-size: cover;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 5;
+        filter: blur(2px);
+        -webkit-filter: blur(2px);
+        opacity: 0.4;
 }
 
 .intro .intro-body .brand-heading {
