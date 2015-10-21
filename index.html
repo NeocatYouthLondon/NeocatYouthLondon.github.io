@@ -159,9 +159,14 @@
 	  for(var i = 0; i < data.length; i++){
 	  	var val = data[i];
 	  
+        var websiteString = "";
+        if(val.websiteURL != "" && val.websiteURL != null){        
+            websiteString = '<a href="' + val.websiteURL + '" target="_blank">Website</a>';
+        }
+      
 	  	if(val.openToPublic){
 		    items.push( 
-		    	 '<div class="user-summary" style="display: inline-block;"><div><img src="' + val.imageURL + '" width=100 height=100><span>' + val.firstName + " " + val.surname + '</span></div><div><a href="' + val.websiteURL + '" target="_blank">Website</a></div>'
+		    	 '<div class="user-summary" style="display: inline-block;"><div><img src="' + val.imageURL + '" width=100 height=100><span>' + val.firstName + " " + val.surname + '</span></div><div>' + websiteString + '</div>'
 	    		+ '<div>' + val.experience + '</div><div>' + val.skills + '</div></div>'
 		  );
 	  	}}
