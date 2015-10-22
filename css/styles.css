@@ -2,6 +2,10 @@
 
 }
 
+.event-date{
+	margin-bottom: 10px;
+}
+
 .forum #notifications{
 	background: yellow;
 	color: black;
