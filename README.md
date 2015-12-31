@@ -1,4 +1,6 @@
-NeocatYouthLondon.github.io
-===========================
+The Pilgrim Choir's official website!
+=====================================
 
-Neocat youth home site
+To access, go to:
+
+http://www.thepilgrimchoir.com/
