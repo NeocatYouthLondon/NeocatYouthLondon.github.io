@@ -182,8 +182,8 @@
     			{{currentProject.name}}  >--->  {{currentThread.subject}}
     		</div>
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
-			<div class="user-name post-div" ng-show="post.userID=='Admin'"><img src="https://avatars0.githubusercontent.com/u/10243976?v=3&s=200" width=50 height=50></div><div class="post-div" style="background:black;color:white">{{post.message}}</div>
-    			<div class="user-name post-div" ng-hide="post.userID=='Admin'"><img ng-src="{{getItemFromID(users, post.userID).imageURL}}" width=50 height=50>{{getItemFromID(users, post.userID).firstName + ": "}}</div><div class="post-div">{{post.message}}</div>
+			<div ng-show="post.userID=='Admin'"><div class="user-name post-div"><img src="https://avatars0.githubusercontent.com/u/10243976?v=3&s=200" width=50 height=50></div><div class="post-div" style="background:black;color:white">{{post.message}}</div></div>
+    			<div ng-hide="post.userID=='Admin'"><div class="user-name post-div"><img ng-src="{{getItemFromID(users, post.userID).imageURL}}" width=50 height=50>{{getItemFromID(users, post.userID).firstName + ": "}}</div><div class="post-div">{{post.message}}</div></div>
 	    	</div>
 	    	<textarea ng-model="newPost" placeholder="Write your message here..." style="max-width: 100%; min-width: 100%; width: 100%"></textarea>
 	    	<div class="forum-click" ng-click="sendPost()" style="float:right;">
