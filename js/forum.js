@@ -107,6 +107,28 @@ var mainModule = angular.module('app', []).
 			});
 		}	
 		
+		$scope.deleteThread = function(){
+			if(confirm("Are you sure you want to delete this thread?")){
+				var stringifiedThread = JSON.stringify($scope.currentThread);
+				$http({method: "POST", url: serverURL + "deleteThread", data: stringifiedThread}).success(function(){
+					var index = $scope.currentProject.threads.indexOf($scope.currentThread);
+					$scope.currentProject.threads.splice(index,1);
+					$scope.show = "threads";
+				});
+			}
+		}
+		
+		$scope.deleteProject = function(){
+			if(confirm("Are you sure you want to delete this project?")){
+				var stringifiedProject = JSON.stringify($scope.currentProject);
+				$http({method: "POST", url: serverURL + "deleteProject", data: stringifiedProject}).success(function(){
+					var index = $scope.projects.indexOf($scope.currentProject);
+					$scope.projects.splice(index,1);
+					$scope.show = "projects";
+				});
+			}
+		}
+		
 		$scope.users = [];
 		
 		$scope.getItemFromID = function(array, id)
