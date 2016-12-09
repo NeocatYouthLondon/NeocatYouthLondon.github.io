@@ -101,7 +101,7 @@ var mainModule = angular.module('app', []).
 		
 		$scope.deletePost = function(post){
 			var stringifiedPost = JSON.stringify(post);
-			$http({method: "DELETE", url: serverURL + "deletePost", data: stringifiedPost}).success(function(){
+			$http({method: "POST", url: serverURL + "deletePost", data: stringifiedPost}).success(function(){
 				var index = $scope.currentThread.posts.indexOf(post);
 				$scope.currentThread.posts.splice(index,1);
 			});
