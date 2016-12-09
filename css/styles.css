@@ -158,3 +158,10 @@ input::selection, textarea::selection{
 	width: 100%;
 	max-width: 500px;
 }
+
+.delete{
+	display: inline-block;
+	padding: 2px;
+	margin: 0 5px;
+	color: red;
+}
