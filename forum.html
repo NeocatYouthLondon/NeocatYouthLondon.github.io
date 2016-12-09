@@ -176,19 +176,45 @@
 	    	<div ng-click="show = 'projects'" class="forum-click" style="float:left;">
 	    		Back
 	    	</div>
+		<div class="forum-click" ng-show="currentUser.id==0" ng-click="deleteThread()" style="float:left">
+			Delete Project
+		</div>
         </div>
         <div class="posts-list ng-hide" ng-show="show == 'posts'">
                 <div class="title-block">
     			{{currentProject.name}}  >--->  {{currentThread.subject}}
     		</div>
         	<div ng-repeat="post in currentThread.posts" class="thread-post">
-			<div ng-show="post.userID=='Admin'"><div class="user-name post-div"><img src="https://avatars0.githubusercontent.com/u/10243976?v=3&s=200" width=50 height=50>Admin</div><div class="post-div" style="background:black;color:white">{{post.message}}<div class="delete" ng-show="currentUser.id==0" ng-click="deletePost(post)">x</div></div></div>
-    			<div ng-hide="post.userID=='Admin'"><div class="user-name post-div"><img ng-src="{{getItemFromID(users, post.userID).imageURL}}" width=50 height=50>{{getItemFromID(users, post.userID).firstName + ": "}}</div><div class="post-div">{{post.message}}<div class="delete" ng-show="currentUser.id==0" ng-click="deletePost(post)">x</div></div></div>
+			<div ng-show="post.userID=='Admin'" style="background:black;color:white">
+				<div class="user-name post-div">
+					<img src="https://avatars0.githubusercontent.com/u/10243976?v=3&s=200" width=50 height=50>
+					Admin
+				</div>
+				<div class="post-div">
+					{{post.message}}
+					<div class="delete" ng-show="currentUser.id==0" ng-click="deletePost(post)">x</div>
+					<div><i>Sent at {{post.date}}</i></div>
+				</div>
+			</div>
+    			<div ng-hide="post.userID=='Admin'">
+				<div class="user-name post-div">
+					<img ng-src="{{getItemFromID(users, post.userID).imageURL}}" width=50 height=50>
+					{{getItemFromID(users, post.userID).firstName + ": "}}
+				</div>
+				<div class="post-div">
+					{{post.message}}
+					<div class="delete" ng-show="currentUser.id==0" ng-click="deletePost(post)">x</div>
+					<div><i>Sent at {{post.date}}</i></div>
+				</div>
+			</div>
 	    	</div>
 	    	<textarea ng-model="newPost" placeholder="Write your message here..." style="max-width: 100%; min-width: 100%; width: 100%"></textarea>
 	    	<div class="forum-click" ng-click="sendPost()" style="float:right;">
 	    		Send message
 	    	</div>
+		<div class="forum-click" ng-show="currentUser.id==0" ng-click="deleteThread()" style="float:left">
+			Delete Thread
+		</div>
 	    	<div ng-click="show = 'threads'" class="forum-click" style="float:left;">
 	    		Back
 	    	</div>
