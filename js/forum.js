@@ -99,6 +99,14 @@ var mainModule = angular.module('app', []).
 			$scope.newPost= "";
 		}
 		
+		$scope.deletePost = function(post){
+			var stringifiedPost = JSON.stringify(post);
+			$http({method: "DELETE", url: serverURL + "deletePost", data: stringifiedPost}).success(function(){
+				var index = $scope.currentThread.posts.indexOf(post);
+				$scope.currentThread.posts.splice(index,1);
+			});
+		}	
+		
 		$scope.users = [];
 		
 		$scope.getItemFromID = function(array, id)
