@@ -166,3 +166,7 @@ input::selection, textarea::selection{
 	color: red;
 	cursor: pointer;
 }
+
+.post-div i{
+	font-size: 10px;	
+}
