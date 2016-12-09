@@ -164,4 +164,5 @@ input::selection, textarea::selection{
 	padding: 2px;
 	margin: 0 5px;
 	color: red;
+	cursor: pointer;
 }
