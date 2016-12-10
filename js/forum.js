@@ -265,7 +265,9 @@ var mainModule = angular.module('app', []).
 		$scope.login = function(){
 			if($scope.loginName == "" || $scope.loginPass==""){ $scope.loginFailed = true; return; }
 			
-			var stringifiedPost = JSON.stringify({userName: $scope.loginName, password: $scope.loginPass});
+			var hashedPassword = MD5($scope.loginPass);
+
+			var stringifiedPost = JSON.stringify({userName: $scope.loginName, password: hashedPassword});
 			$http({method: "POST", url: serverURL + "login", data: stringifiedPost}).success(function(data, status){
 				if(data != "false"){
 					//todo: change this later to be assigned on login.
