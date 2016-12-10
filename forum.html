@@ -176,7 +176,7 @@
 	    	<div ng-click="show = 'projects'" class="forum-click" style="float:left;">
 	    		Back
 	    	</div>
-		<div class="forum-click" ng-show="currentUser.id==0" ng-click="deleteProject()" style="float:left">
+		<div class="forum-click" ng-show="(currentUser.id==0)&&(currentProject.threads.length==0)" ng-click="deleteProject()" style="float:left">
 			Delete Project
 		</div>
         </div>
@@ -215,7 +215,7 @@
 	    	<div ng-click="show = 'threads'" class="forum-click" style="float:left;">
 	    		Back
 	    	</div>
-		<div class="forum-click" ng-show="currentUser.id==0" ng-click="deleteThread()" style="float:left">
+		<div class="forum-click" ng-show="(currentUser.id==0)&&(currentThread.posts.length==0)" ng-click="deleteThread()" style="float:left">
 			Delete Thread
 		</div>
         </div>
